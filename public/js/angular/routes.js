@@ -3,7 +3,16 @@ angular.module('testMakerApp', ['ngRoute', 'testMakerApp.controllers'])
     $routeProvider.when('/', {
         templateUrl:"/partials/home.html",
         controller: "HomeViewController"
-    }).otherwise({
+    })
+    .when('/new_test', {
+        templateUrl:"partials/new_test.html",
+        controller: "NewTestViewController"
+    })
+    .when('/my_tests', {
+        templateUrl:"partials/my_tests.html",
+        controller: "MyTestsViewController"
+     })
+    .otherwise({
             redirectTo:'/' //default angular path
         }
 
