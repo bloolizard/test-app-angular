@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html ng-app="testMakerApp">
   <head>
-    <title><%= title %></title>
+    <title>Test Maker Application</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel='stylesheet' href='/css/style.css' />
     <script src="../angular/angular.js"></script>
     <script src="../angular-route/angular-route.js"></script>
   </head>
   <body>
-  <header class="navbar-header">
+  <header ng-controller="HeaderViewController">
+    <div class="container">
+        <div class="navbar-header">
+            <div class="brand"><a href="#/">H</a></div>
+            <div class="title">{{ title }}</div>
+            <div class="nav_btns">
+                <a href="#/new_test">NT | </a>
+                <a href="#/my_tests">MT</a>
+            </div>
+        </div>
 
+    </div>
   </header>
     <div ng-view></div>
 

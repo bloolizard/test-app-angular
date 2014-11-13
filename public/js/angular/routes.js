@@ -17,4 +17,10 @@ angular.module('testMakerApp', ['ngRoute', 'testMakerApp.controllers'])
         }
 
     );
-}]);
+}])
+.factory('communicateScope', function($rootScope){
+    var title = "";
+    var scope = $rootScope.$new(true);
+    scope.title = title;
+    return scope;
+});
