@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="testMakerApp">
   <head>
     <title><%= title %></title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel='stylesheet' href='/css/style.css' />
+    <script src="../angular/angular.js"></script>
+    <script src="../angular-route/angular-route.js"></script>
   </head>
   <body>
+    <div ng-view></div>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    Test Application
+    <script src="/js/angular/controllers.js"></script>
+    <script src="/js/angular/routes.js"></script>
   </body>
 </html>
