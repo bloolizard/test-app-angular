@@ -1,5 +1,56 @@
 body {
-  background-color: black;
+  background-color: #393939;
   color: white; }
+
+header.navbar-header {
+  background-color: black;
+  opacity: 0.2;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  min-height: 50px; }
+
+div.home-wrapper {
+  margin-top: 7em;
+  text-align: center;
+  width: 100%; }
+
+div.logo1 {
+  font-size: xx-large;
+  padding: 1em; }
+
+div.home-buttons a {
+  width: inherit;
+  height: inherit;
+  text-decoration: none;
+  color: inherit; }
+  div.home-buttons a span {
+    width: inherit;
+    height: inherit; }
+  div.home-buttons a span.replacer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1; }
+
+.button {
+  background-color: #e1a604;
+  font-family: "UniversLTPro-55Roman", "Open Sans", sans-serif;
+  font-size: 14px;
+  color: black;
+  width: 214px;
+  height: 45px;
+  text-align: center;
+  line-height: 42px;
+  margin: 5px auto;
+  position: relative; }
+
+.create-new {
+  color: #e1a604;
+  background-color: transparent;
+  border: 1px solid #e1a604; }
 
 /*# sourceMappingURL=style.css.map */
