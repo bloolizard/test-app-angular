@@ -7,6 +7,10 @@ angular.module('testMakerApp.controllers',[])
         $scope.addQuestion = function(event){
             event.preventDefault();
             console.log(event);
+        };
+        $scope.finishedTest = function(event){
+            event.preventDefault();
+            console.log(event);
         }
 })
 .controller('MyTestsViewController', function($scope, communicateScope){
@@ -18,8 +22,9 @@ angular.module('testMakerApp.controllers',[])
         $scope.title = communicateScope.title;
     });
 })
-.controller('RenderTestFormViewController', function($scope, communicateScope){
+.controller('RenderTestPreviewViewController', function($scope, communicateScope){
     communicateScope.$watch('render_test', function(){
         $scope.render_test = communicateScope.render_test;
+
     });
 });

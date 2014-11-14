@@ -60,6 +60,11 @@ div.new-test-wrapper {
   text-align: center;
   width: 100%; }
 
+div.test-name {
+  display: block; }
+  div.test-name > * {
+    display: inline-block; }
+
 ul.answers {
   list-style: none; }
   ul.answers li {

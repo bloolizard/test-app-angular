@@ -1,31 +1,38 @@
 <div class="new-test-wrapper">
+<div class="container">
 
-<div>
-    <label for="test_name">Enter Test Name: </label>
-    <input id="test_name" type="text"/>
-    <button>Create New</button>
-</div>
-
-<div class="question_container">
-    <form action="">
+    <div class="test-name">
         <p>
-            <label for="question">Enter a Question: </label><input id="question" type="text"/>
+            <label for="test_name">Enter Test Name:</label>
+            <input id="test_name" type="text"/>
         </p>
+        <button>Create New</button>
 
-        <p>Enter Your Answers Below: Mark Correct Answer</p>
-        <ul class="answers">
-            <li><input name="answers" type="radio"/><input type="text"/></li>
-            <li><input name="answers" type="radio"/><input type="text"/></li>
-            <li><input name="answers" type="radio"/><input type="text"/></li>
-            <li><input name="answers" type="radio"/><input type="text"/></li>
-        </ul>
-        <button ng-click="addQuestion($event)">Add Question</button>
-    </form>
 
-</div>
+    </div>
 
-<div class="render-test-form" ng-controller="RenderTestFormViewController">
+    <div class="question_container">
+        <form action="">
+            <p>
+                <label for="question">Enter a Question: </label><input id="question" type="text"/>
+            </p>
 
+            <p>Enter Your Answers Below: Mark Correct Answer</p>
+            <ul class="answers">
+                <li><input name="answers" type="radio"/><input type="text"/></li>
+                <li><input name="answers" type="radio"/><input type="text"/></li>
+                <li><input name="answers" type="radio"/><input type="text"/></li>
+                <li><input name="answers" type="radio"/><input type="text"/></li>
+            </ul>
+            <button ng-click="addQuestion($event)">Add Question</button>
+            <button ng-click="finishedTest($event)">Finished</button>
+        </form>
+
+    </div>
+
+    <div class="render-test-form" ng-controller="RenderTestPreviewViewController">
+
+    </div>
 </div>
 
 </div>
