@@ -2,16 +2,17 @@
 <div class="container">
 
     <div class="test-name">
-        <p>
-            <label for="test_name">Enter Test Name:</label>
-            <input id="test_name" type="text"/>
-        </p>
-        <button>Create New</button>
 
+            <p>
+                <input type="text" placeholder="Test Name" ng-model="f.testName"
+                       ng-keydown="testNameEnter($event)" ng-disabled="isTestReady" required />
+            </p>
+
+        <button ng-disabled="isTestReady" ng-click="createTest()">Create Test</button>
 
     </div>
 
-    <div class="question_container">
+    <div class="question_container" ng-show="isTestReady">
         <form action="">
             <p>
                 <label for="question">Enter a Question: </label><input id="question" type="text"/>

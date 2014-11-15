@@ -10,6 +10,10 @@ header {
   left: 0;
   min-height: 50px; }
 
+input[type="text"]{
+    text-align: center;
+}
+
 .container {
   margin-right: auto;
   margin-left: auto;

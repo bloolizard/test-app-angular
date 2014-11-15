@@ -4,6 +4,26 @@ angular.module('testMakerApp.controllers',[])
 })
 .controller('NewTestViewController', function($scope, communicateScope){
         communicateScope.title = 'NEW TEST';
+
+        $scope.isTestReady = false;
+
+        $scope.testNameEnter = function(event){
+            if (event.keyCode === 13){
+                $scope.createTest();
+            }
+        };
+
+        $scope.createTest = function(){
+            if ($scope.f.testName != undefined){
+                // disable form
+                ($scope.isTestReady == false) ? $scope.isTestReady = true : $scope.isTestReady = false;
+
+                // store test :todo using factory?
+
+            }
+
+        };
+
         $scope.addQuestion = function(event){
             event.preventDefault();
             console.log(event);
