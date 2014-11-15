@@ -37,13 +37,18 @@ angular.module('testMakerApp.controllers',[])
             event.preventDefault();
             $scope.test.questions.push(
                 { name: $scope.q.name,
-                  answers: [$scope.q.answer_1,
-                            $scope.q.answer_2,
-                            $scope.q.answer_3,
-                            $scope.q.answer_4 ]}
-            );
+                  answers: [{value: $scope.q.radio_1,
+                            answer: $scope.q.answer_1},
+                            {value: $scope.q.radio_2,
+                            answer: $scope.q.auswer_2},
+                            {value: $scope.q.radio_3,
+                             answer:$scope.q.answer_3},
+                            {value: $scope.q.radio_4,
+                            answer: $scope.q.answer_4 }]
+                            });
             //reset the form
             $scope.q = {};
+            console.log(test);
         };
         $scope.finishedTest = function(event){
             event.preventDefault();

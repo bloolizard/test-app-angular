@@ -21,10 +21,10 @@
 
             <p>Enter Your Answers Below: Mark Correct Answer</p>
             <ul class="answers">
-                <li><input name="answers" type="radio"/><input ng-model="q.answer_1" type="text"/></li>
-                <li><input name="answers" type="radio"/><input ng-model="q.answer_2" type="text"/></li>
-                <li><input name="answers" type="radio"/><input ng-model="q.answer_3" type="text"/></li>
-                <li><input name="answers" type="radio"/><input ng-model="q.answer_4" type="text"/></li>
+                <li><input name="answers" ng-model="q.radio_1" type="radio"/><input ng-model="q.answer_1" type="text"/></li>
+                <li><input name="answers" ng-model="q.radio_2" type="radio"/><input ng-model="q.answer_2" type="text"/></li>
+                <li><input name="answers" ng-model="q.radio_3" type="radio"/><input ng-model="q.answer_3" type="text"/></li>
+                <li><input name="answers" ng-model="q.radio_4" type="radio"/><input ng-model="q.answer_4" type="text"/></li>
             </ul>
             <button ng-click="addQuestion($event)">Add Question</button>
             <button ng-click="finishedTest($event)">Finished</button>
@@ -34,11 +34,12 @@
 
     <div class="render-test-form" ng-controller="RenderTestPreviewViewController">
     {{ test.test_name }}
-    <div ng-repeat="question in test.questions">
+    <div ng-repeat="question in test.questions | orderBy: reverse">
         {{question.name}}
-        <div ng-repeat="answer in question.answers track by $index">
+        <div ng-repeat="answer in question.answers">
+
             <!--NTS so annoying to figure this out...-->
-            {{answer}}
+            {{answer.answer}}
         </div>
 
     </div>
