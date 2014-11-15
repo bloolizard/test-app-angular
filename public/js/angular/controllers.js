@@ -5,6 +5,11 @@ angular.module('testMakerApp.controllers',[])
 .controller('NewTestViewController', function($scope, communicateScope){
         communicateScope.title = 'NEW TEST';
 
+        $scope.test = {
+            test_name: "",
+            questions: []
+        };
+
         $scope.isTestReady = false;
 
         $scope.testNameEnter = function(event){
@@ -15,6 +20,9 @@ angular.module('testMakerApp.controllers',[])
 
         $scope.createTest = function(){
             if ($scope.f.testName != undefined){
+                //set Test Name
+                $scope.test.test_name = $scope.f.testName;
+
                 // disable form
                 ($scope.isTestReady == false) ? $scope.isTestReady = true : $scope.isTestReady = false;
 
@@ -23,10 +31,19 @@ angular.module('testMakerApp.controllers',[])
             }
 
         };
-
+        $scope.colors = ['red', 'yellow', 'orange'];
+        //adds a question to test
         $scope.addQuestion = function(event){
             event.preventDefault();
-            console.log(event);
+            $scope.test.questions.push(
+                { name: $scope.q.name,
+                  answers: [$scope.q.answer_1,
+                            $scope.q.answer_2,
+                            $scope.q.answer_3,
+                            $scope.q.answer_4 ]}
+            );
+            //reset the form
+            $scope.q = {};
         };
         $scope.finishedTest = function(event){
             event.preventDefault();

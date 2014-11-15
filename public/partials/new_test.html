@@ -15,15 +15,16 @@
     <div class="question_container" ng-show="isTestReady">
         <form action="">
             <p>
-                <label for="question">Enter a Question: </label><input id="question" type="text"/>
+                <label for="question">Enter a Question: </label>
+                <input id="question" ng-model="q.name" type="text"/>
             </p>
 
             <p>Enter Your Answers Below: Mark Correct Answer</p>
             <ul class="answers">
-                <li><input name="answers" type="radio"/><input type="text"/></li>
-                <li><input name="answers" type="radio"/><input type="text"/></li>
-                <li><input name="answers" type="radio"/><input type="text"/></li>
-                <li><input name="answers" type="radio"/><input type="text"/></li>
+                <li><input name="answers" type="radio"/><input ng-model="q.answer_1" type="text"/></li>
+                <li><input name="answers" type="radio"/><input ng-model="q.answer_2" type="text"/></li>
+                <li><input name="answers" type="radio"/><input ng-model="q.answer_3" type="text"/></li>
+                <li><input name="answers" type="radio"/><input ng-model="q.answer_4" type="text"/></li>
             </ul>
             <button ng-click="addQuestion($event)">Add Question</button>
             <button ng-click="finishedTest($event)">Finished</button>
@@ -32,7 +33,15 @@
     </div>
 
     <div class="render-test-form" ng-controller="RenderTestPreviewViewController">
+    {{ test.test_name }}
+    <div ng-repeat="question in test.questions">
+        {{question.name}}
+        <div ng-repeat="answer in question.answers track by $index">
+            <!--NTS so annoying to figure this out...-->
+            {{answer}}
+        </div>
 
+    </div>
     </div>
 </div>
 
