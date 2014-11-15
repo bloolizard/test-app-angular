@@ -8,7 +8,7 @@
                        ng-keydown="testNameEnter($event)" ng-disabled="isTestReady" required />
             </p>
 
-        <button ng-disabled="isTestReady" ng-click="createTest()">Create Test</button>
+        <button class="btn-black btn" ng-disabled="isTestReady" ng-click="createTest()">Create</button>
 
     </div>
 
@@ -24,7 +24,7 @@
                 <li><input name="answers" ng-model="q.radio_1" type="radio"/><input ng-model="q.answer_1" type="text"/></li>
                 <li><input name="answers" ng-model="q.radio_2" type="radio"/><input ng-model="q.answer_2" type="text"/></li>
                 <li><input name="answers" ng-model="q.radio_3" type="radio"/><input ng-model="q.answer_3" type="text"/></li>
-                <li><input name="answers" ng-model="q.radio_4" type="radio"/><input ng-model="q.answer_4" type="text"/></li>
+                <li><input name="answers" ng-model="q.radio_4" type="radio"/><input ng-model="q.answer_4" type="text" ng-keydown="submit($event)"/></li>
             </ul>
             <button ng-click="addQuestion($event)">Add Question</button>
             <button ng-click="finishedTest($event)">Finished</button>

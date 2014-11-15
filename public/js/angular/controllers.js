@@ -31,7 +31,6 @@ angular.module('testMakerApp.controllers',[])
             }
 
         };
-        $scope.colors = ['red', 'yellow', 'orange'];
         //adds a question to test
         $scope.addQuestion = function(event){
             event.preventDefault();
@@ -48,8 +47,14 @@ angular.module('testMakerApp.controllers',[])
                             });
             //reset the form
             $scope.q = {};
-            console.log(test);
         };
+
+        $scope.submit = function(event){
+            if (event.keyCode == 13){
+                addQuestion(event);
+            }
+        };
+
         $scope.finishedTest = function(event){
             event.preventDefault();
             console.log(event);
