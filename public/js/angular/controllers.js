@@ -11,6 +11,7 @@ angular.module('testMakerApp.controllers',[])
         };
 
         $scope.isTestReady = false;
+        $scope.isQuestionAdded = false;
 
         $scope.testNameEnter = function(event){
             if (event.keyCode === 13){
@@ -47,6 +48,7 @@ angular.module('testMakerApp.controllers',[])
                             });
             //reset the form
             $scope.q = {};
+            $scope.isQuestionAdded = true;
         };
 
         $scope.submit = function(event){

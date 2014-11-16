@@ -1,5 +1,5 @@
 <div class="new-test-wrapper">
-<div class="container">
+
 
     <div class="test-name">
 
@@ -16,24 +16,25 @@
         <form action="">
             <p>
                 <label for="question">Enter a Question: </label>
-                <input id="question" ng-model="q.name" type="text"/>
+                <input id="question" placeholder="Enter a Question" ng-model="q.name" type="text"/>
             </p>
 
             <p>Enter Your Answers Below: Mark Correct Answer</p>
             <ul class="answers">
-                <li><input name="answers" ng-model="q.radio_1" type="radio"/><input ng-model="q.answer_1" type="text"/></li>
-                <li><input name="answers" ng-model="q.radio_2" type="radio"/><input ng-model="q.answer_2" type="text"/></li>
-                <li><input name="answers" ng-model="q.radio_3" type="radio"/><input ng-model="q.answer_3" type="text"/></li>
-                <li><input name="answers" ng-model="q.radio_4" type="radio"/><input ng-model="q.answer_4" type="text" ng-keydown="submit($event)"/></li>
+                <li><input name="answers" ng-model="q.radio_1" type="radio"/><input placeholder="Answer 1" ng-model="q.answer_1" type="text"/></li>
+                <li><input name="answers" ng-model="q.radio_2" type="radio"/><input placeholder="Answer 2" ng-model="q.answer_2" type="text"/></li>
+                <li><input name="answers" ng-model="q.radio_3" type="radio"/><input placeholder="Answer 3" ng-model="q.answer_3" type="text"/></li>
+                <li><input name="answers" ng-model="q.radio_4" type="radio"/><input placeholder="Answer 4" ng-model="q.answer_4" type="text" ng-keydown="submit($event)"/></li>
             </ul>
-            <button ng-click="addQuestion($event)">Add Question</button>
-            <button ng-click="finishedTest($event)">Finished</button>
+            <button class="btn-black btn" ng-click="addQuestion($event)">Add Question</button>
+            <button class="btn-black btn" ng-click="finishedTest($event)">Finished</button>
         </form>
 
     </div>
 
-    <div class="render-test-form" ng-controller="RenderTestPreviewViewController">
-    {{ test.test_name }}
+    <div class="render-test-form" ng-show="isQuestionAdded" ng-controller="RenderTestPreviewViewController">
+        <h5>Test Preview: <span>{{ test.test_name }}</span></h5>
+
     <div ng-repeat="question in test.questions | orderBy: reverse">
         {{question.name}}
         <div ng-repeat="answer in question.answers">
@@ -44,6 +45,6 @@
 
     </div>
     </div>
-</div>
+
 
 </div>
