@@ -60,7 +60,7 @@ div.home-wrapper {
   width: 100%; }
 
 div.my-tests-wrapper {
-  margin-top: 7em;
+  margin-top: 5em;
   text-align: center;
   width: 100%; }
 
@@ -164,5 +164,14 @@ div.home-buttons a {
 
 span.preview {
   color: red; }
+
+ul.my_tests_ul {
+  padding: 0;
+  list-style-type: none; }
+  ul.my_tests_ul > li {
+    padding: 0.2em; }
+  ul.my_tests_ul a {
+    text-decoration: none;
+    color: #fff; }
 
 /*# sourceMappingURL=style.css.map */

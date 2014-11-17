@@ -71,8 +71,21 @@ angular.module('testMakerApp.controllers',[])
 
         }
 })
-.controller('MyTestsViewController', function($scope, communicateScope){
+.controller('MyTestsViewController', function($scope, $http, communicateScope){
         communicateScope.title = 'MY TESTS';
+        // get tests from server
+        $http.get('/tests').success(function(data){
+            $scope.tests = data;
+            console.log($scope.data);
+        })
+        .error(function(){
+            // Sorry there was an error
+        });
+
+        $scope.openTest = function(test_id, event) {
+            event.preventDefault();
+            console.log(test_id);
+        };
 
 })
 .controller('HeaderViewController', function($scope, communicateScope){
@@ -85,4 +98,7 @@ angular.module('testMakerApp.controllers',[])
         $scope.render_test = communicateScope.render_test;
 
     });
+})
+.controller('SingleTestViewController', function($scope, $routeParams){
+    $scope.testid = $routeParams.test_id;
 });
