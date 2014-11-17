@@ -40,7 +40,7 @@ angular.module('testMakerApp.controllers',[])
                   answers: [{value: $scope.q.radio_1,
                             answer: $scope.q.answer_1},
                             {value: $scope.q.radio_2,
-                            answer: $scope.q.auswer_2},
+                            answer: $scope.q.answer_2},
                             {value: $scope.q.radio_3,
                              answer:$scope.q.answer_3},
                             {value: $scope.q.radio_4,
