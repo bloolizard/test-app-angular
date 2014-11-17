@@ -48,6 +48,11 @@ header {
 div.nav_btns {
   float: right; }
 
+div.render-test-form {
+  padding: 1em 0;
+  color: black;
+  background-color: #F6F6F6; }
+
 div.home-wrapper {
   margin-top: 7em;
   text-align: center;
@@ -79,6 +84,9 @@ div.question_container {
   color: black;
   background-color: #EBEBEB; }
 
+p.question {
+  font-style: italic; }
+
 ul.answers {
   margin-right: 0;
   margin-left: 0;
@@ -88,6 +96,10 @@ ul.answers {
     margin-top: 0.5em; }
     ul.answers li input[type="text"] {
       min-width: 200px; }
+    ul.answers li label {
+      min-width: 200px;
+      display: inline-block;
+      text-align: left; }
 
 input[type="radio"] {
   margin-right: 1em; }
@@ -148,5 +160,8 @@ div.home-buttons a {
   color: #e1a604;
   background-color: transparent;
   border: 1px solid #e1a604; }
+
+span.preview {
+  color: red; }
 
 /*# sourceMappingURL=style.css.map */

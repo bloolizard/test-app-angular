@@ -32,16 +32,24 @@
 
     </div>
 
-    <div class="render-test-form" ng-show="isQuestionAdded" ng-controller="RenderTestPreviewViewController">
-        <h5>Test Preview: <span>{{ test.test_name }}</span></h5>
+    <div class="render-test-form" ng-show="isQuestionAdded"  ng-controller="RenderTestPreviewViewController">
+        <h5><span class="preview">Test Preview</span>
+            <p>Test Name: <span>{{ test.test_name }}</span></p></h5>
 
     <div ng-repeat="question in test.questions | orderBy: reverse">
-        {{question.name}}
-        <div ng-repeat="answer in question.answers">
+        <p class="question">
+            [{{$index + 1}}] {{question.name}}
 
-            <!--NTS so annoying to figure this out...-->
-            {{answer.answer}}
-        </div>
+        </p>
+        <ul class="answers">
+            <li ng-repeat="answer in question.answers">
+
+                <!--NTS so annoying to figure this out...-->
+                <input id="answer_{{$parent.$index+1}}_{{$index}}" name="answer_{{$parent.$index+1}}" type="radio"/>
+                <label for="answer_{{$parent.$index+1}}_{{$index}}">{{answer.answer}}</label>
+            </li>
+
+        </ul>
 
     </div>
     </div>
