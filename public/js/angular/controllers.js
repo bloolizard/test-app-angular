@@ -49,6 +49,7 @@ angular.module('testMakerApp.controllers',[])
             //reset the form
             $scope.q = {};
             $scope.isQuestionAdded = true;
+            console.log($scope.test);
         };
 
         $scope.submit = function(event){
