@@ -2,7 +2,7 @@ angular.module('testMakerApp.controllers',[])
 .controller('HomeViewController', function($scope, communicateScope){
     communicateScope.title = 'HOME';
 })
-.controller('NewTestViewController', function($scope, communicateScope){
+.controller('NewTestViewController', function($scope, $http, communicateScope){
         communicateScope.title = 'NEW TEST';
 
         $scope.test = {
