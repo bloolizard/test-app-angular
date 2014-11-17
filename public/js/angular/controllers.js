@@ -2,7 +2,7 @@ angular.module('testMakerApp.controllers',[])
 .controller('HomeViewController', function($scope, communicateScope){
     communicateScope.title = 'HOME';
 })
-.controller('NewTestViewController', function($scope, $http, communicateScope){
+.controller('NewTestViewController', function($scope, $http, $location, communicateScope){
         communicateScope.title = 'NEW TEST';
 
         $scope.test = {
@@ -64,10 +64,13 @@ angular.module('testMakerApp.controllers',[])
             $http.post('/tests',$scope.test).success(function(data){
                 console.log('Success');
                 console.log(data);
+                $location.path('/thank_you');
+
             })
             .error(function(){
                 console.log('wahh error');
              });
+
 
         }
 })
@@ -99,6 +102,14 @@ angular.module('testMakerApp.controllers',[])
 
     });
 })
-.controller('SingleTestViewController', function($scope, $routeParams){
-    $scope.testid = $routeParams.test_id;
+.controller('SingleTestViewController', function($scope, $http, $routeParams){
+    $http.get('/tests/'+$routeParams.test_id).success(function(data){
+        $scope.test = data[0];
+    });
+    $scope.gradeTest = function(){
+        console.log('Grade Test');
+    }
+})
+.controller('ThankYouViewController', function($scope){
+
 });

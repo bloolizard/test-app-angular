@@ -16,6 +16,10 @@ angular.module('testMakerApp', ['ngRoute', 'testMakerApp.controllers'])
         templateUrl:"partials/show_test.html",
         controller:"SingleTestViewController"
      })
+    .when('/thank_you', {
+        templateUrl:"partials/thank_you.html",
+        controller:"ThankYouViewController"
+     })
     .otherwise({
             redirectTo:'/' //default angular path
         }

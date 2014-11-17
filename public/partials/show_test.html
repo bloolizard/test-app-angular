@@ -1,3 +1,24 @@
-<div style="padding-top: 5em;">
-    Smile Test {{testid}}
+<div class="show_test" style="padding-top: 5em;">
+    <p>
+        {{test.test_name}}
+    </p>
+
+    <form action="">
+    <div ng-repeat="question in test.questions">
+        <p>
+            {{question.name}}
+        </p>
+
+
+        <ul class="answers">
+            <li ng-repeat="answer in question.answers">
+                <input name="answer_{{$parent.$index+1}}"
+                       id="answer_{{$parent.$index+1}}_{{$index}}"
+                       type="radio"/>{{answer.answer}}
+            </li>
+        </ul>
+
+    </div>
+    </form>
+    <button class="btn-black btn" ng-click="gradeTest()">Grade Test</button>
 </div>
