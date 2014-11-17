@@ -59,7 +59,16 @@ angular.module('testMakerApp.controllers',[])
 
         $scope.finishedTest = function(event){
             event.preventDefault();
-            console.log(event);
+
+            // send a POST request to server containing test
+            $http.post('/tests',$scope.test).success(function(data){
+                console.log('Success');
+                console.log(data);
+            })
+            .error(function(){
+                console.log('wahh error');
+             });
+
         }
 })
 .controller('MyTestsViewController', function($scope, communicateScope){
