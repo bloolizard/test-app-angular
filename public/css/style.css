@@ -31,6 +31,8 @@ header {
       color: #fff;
       text-decoration: none;
       font-family: "UniversLTPro-55Roman", "Open Sans", sans-serif; }
+    .navbar-header > div > i {
+      color: white; }
   .navbar-header > div.brand {
     z-index: 1000; }
   .navbar-header > div.title {
