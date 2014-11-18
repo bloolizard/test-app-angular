@@ -37,14 +37,11 @@ angular.module('testMakerApp.controllers',[])
             event.preventDefault();
             $scope.test.questions.push(
                 { name: $scope.q.name,
-                  answers: [{value: $scope.q.radio_1,
-                            answer: $scope.q.answer_1},
-                            {value: $scope.q.radio_2,
-                            answer: $scope.q.answer_2},
-                            {value: $scope.q.radio_3,
-                             answer:$scope.q.answer_3},
-                            {value: $scope.q.radio_4,
-                            answer: $scope.q.answer_4 }]
+                  answers: [{answer: $scope.q.answer_1},
+                            {answer: $scope.q.answer_2},
+                            {answer:$scope.q.answer_3},
+                            {answer: $scope.q.answer_4 }],
+                  correct: $scope.q.radio
                             });
             //reset the form
             $scope.q = {};
@@ -104,12 +101,39 @@ angular.module('testMakerApp.controllers',[])
     });
 })
 .controller('SingleTestViewController', function($scope, $http, $routeParams){
+    $scope.radio = {};
+
     $http.get('/tests/'+$routeParams.test_id).success(function(data){
         $scope.test = data[0];
+
+        $scope.answers = $scope.test.questions.map(function(elem){
+            return elem.correct;
+        });
     });
+
+
     $scope.gradeTest = function(){
-        console.log('Grade Test');
-    }
+        console.log($scope.answers);
+        console.log($scope.radio);
+        var correct = 0;
+        total = $scope.answers.length;
+        for (i in $scope.answers){
+            if($scope.answers[i] == $scope.radio[i]){
+                correct += 1;
+            }
+            else {
+//                The answer is incorrect.
+//                console.log('incorrect');
+            }
+        }
+//        todo: make a new view for alert.
+        alert('You scored ' + (correct/total * 100) + '%' );
+    };
+    $scope.$watch('r_', function(){
+        console.log($scope.$r);
+    });
+
+
 })
 .controller('ThankYouViewController', function($scope){
 

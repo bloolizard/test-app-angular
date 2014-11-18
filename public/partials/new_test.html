@@ -21,13 +21,13 @@
 
             <p>Enter Your Answers Below: Mark Correct Answer</p>
             <ul class="answers">
-                <li><input name="answers" ng-model="q.radio_1" type="radio"/>
+                <li><input name="answers" ng-model="q.radio" value="{{q.answer_1}}" type="radio"/>
                     <input placeholder="Answer 1" ng-model="q.answer_1" type="text" required/></li>
-                <li><input name="answers" ng-model="q.radio_2" type="radio" required/>
+                <li><input name="answers" ng-model="q.radio" type="radio" value="{{q.answer_2}}" required/>
                     <input placeholder="Answer 2" ng-model="q.answer_2" type="text"/></li>
-                <li><input name="answers" ng-model="q.radio_3" type="radio"/>
+                <li><input name="answers" ng-model="q.radio" type="radio" value="{{q.answer_3}}"/>
                     <input placeholder="Answer 3" ng-model="q.answer_3" type="text" required/></li>
-                <li><input name="answers" ng-model="q.radio_4" type="radio"/>
+                <li><input name="answers" ng-model="q.radio" type="radio" value="{{q.answer_4}}"/>
                     <input placeholder="Answer 4" ng-model="q.answer_4" type="text" required ng-keydown="submit($event)"/></li>
             </ul>
             <button class="btn-black btn" ng-click="addQuestion($event)">Add Question</button>

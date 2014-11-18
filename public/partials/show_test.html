@@ -10,16 +10,16 @@
         </p>
 
 
+
         <ul class="answers">
             <li ng-repeat="answer in question.answers">
-                <input name="answer_{{$parent.$index+1}}"
-                       id="answer_{{$parent.$index+1}}_{{$index}}"
-                       type="radio"/><input type="hidden" value="{{answer.value}}"/>{{answer.answer}}
-                {{answer}}
+                <input type="radio" ng-model="radio[$parent.$index]" name="question_{{$parent.$index}}" value="{{answer.answer}}"/>{{answer.answer}}
+
             </li>
         </ul>
 
     </div>
     </form>
+    <pre>{{radio | json}}</pre>
     <button class="btn-black btn" ng-click="gradeTest()">Grade Test</button>
 </div>
