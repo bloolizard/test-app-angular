@@ -20,6 +20,10 @@ angular.module('testMakerApp', ['ngRoute', 'testMakerApp.controllers'])
         templateUrl:"partials/thank_you.html",
         controller:"ThankYouViewController"
      })
+    .when('/congrats', {
+        templateUrl: "partials/score.html",
+        controller: "ScoreViewController"
+     })
     .otherwise({
             redirectTo:'/' //default angular path
         }
@@ -30,5 +34,13 @@ angular.module('testMakerApp', ['ngRoute', 'testMakerApp.controllers'])
     var title = "";
     var scope = $rootScope.$new(true);
     scope.title = title;
+    return scope;
+})
+.factory('score', function($rootScope){
+    var score = null;
+    var total = null;
+    var scope = $rootScope.$new(true);
+    scope.score = score;
+    scope.total = total;
     return scope;
 });

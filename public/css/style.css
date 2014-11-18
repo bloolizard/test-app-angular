@@ -191,4 +191,12 @@ div.show_test {
   text-align: center;
   padding: 1em; }
 
+div.score {
+  margin-top: 5em;
+  text-align: center;
+  background-color: #393939; }
+  div.score a {
+    text-decoration: underline;
+    color: white; }
+
 /*# sourceMappingURL=style.css.map */

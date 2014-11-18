@@ -100,7 +100,7 @@ angular.module('testMakerApp.controllers',[])
 
     });
 })
-.controller('SingleTestViewController', function($scope, $http, $routeParams){
+.controller('SingleTestViewController', function($scope, $location, $http, $routeParams, score){
     $scope.radio = {};
 
     $http.get('/tests/'+$routeParams.test_id).success(function(data){
@@ -128,6 +128,12 @@ angular.module('testMakerApp.controllers',[])
         }
 //        todo: make a new view for alert.
         alert('You scored ' + (correct/total * 100) + '%' );
+
+        //set score to send to other view
+        score.score = correct;
+        score.total = total;
+        $location.path('/congrats');
+
     };
     $scope.$watch('r_', function(){
         console.log($scope.$r);
@@ -136,5 +142,10 @@ angular.module('testMakerApp.controllers',[])
 
 })
 .controller('ThankYouViewController', function($scope){
+
+})
+.controller('ScoreViewController', function($scope, score){
+    $scope.score = score.score;
+    $scope.total = score.total;
 
 });
